@@ -38,7 +38,7 @@ def get_serial_port(board_id):
     """
     params = BrainFlowInputParams()
     for i in range(10):
-        params.serial_port = "COM" + str(i)
+        params.serial_port = "COM" + "7"
         board = BoardShim(board_id, params)
         try:
             board.prepare_session()
@@ -87,7 +87,7 @@ class Board(BoardShim):
             )
 
         # Initialize BoardShim object
-        # super().__init__(self.board_id, self.params)
+        super().__init__(self.board_id, self.params)
 
         if debug == True:
             BoardShim.enable_dev_board_logger()

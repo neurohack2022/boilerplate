@@ -116,9 +116,11 @@ if False:  # debugging... remebeber to put the tf imports back in session_window
     import tensorflow as tf
 
 if sys.platform == "win32":
-    from arduino_windows import ard_wind_on as ard_turn_on
+    pass
+    # from arduino_windows import ard_wind_on as ard_turn_on
 else:
-    from arduino_mac import ard_mac_on as ard_turn_on
+    pass
+    # from arduino_mac import ard_mac_on as ard_turn_on
 
 
 # let's make a menu window class
@@ -357,6 +359,7 @@ class MenuWindow(QMainWindow):
             self.impedance_window.close()
         event.accept()
 
+
     #########################################
     ##### Functions for Handling Inputs #####
     #########################################
@@ -490,11 +493,12 @@ class MenuWindow(QMainWindow):
                 "failed to create arduino window because arduino port was not an integer"
             )
         else:
-            self.data_window = ard_turn_on(
-                parent=self,
-                arduino_con=self.arduino_con,
-                arduino_port=self.arduino_serial_port,
-            )
+            pass
+            # self.data_window = ard_turn_on(
+            #     parent=self,
+            #     arduino_con=self.arduino_con,
+            #     arduino_port=self.arduino_serial_port,
+            # )
             self.data_window.show()
             self.data_window_open = True
             logger.info("created arduino window")
